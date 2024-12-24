@@ -72,6 +72,9 @@
             --color_shop: #9858f5;
             --color_shop_rgb: 152,88,245;
         }
+        * {
+            box-sizing: border-box;
+        }
         html, body {
             margin: 0;
             padding: 0;
@@ -88,17 +91,16 @@
             text-align: left;
             position: relative;
         }
-        #header-hamburger{
+        #header-hamburger, #header-naverpay, #header-navertalk, #header-notice, #header-shoppingbag{
             position: absolute;
             top: 5px;
-            left: -12px;
             padding: 8px;
             display: inline-block;
             background: none;
             border: none;
             cursor: pointer;
         }
-        #header-hamburger:hover::before{
+        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-navertalk:hover::before, #header-notice:hover::before, #header-shoppingbag:hover::before{
             position: absolute;
             content:'';
             z-index: 0;
@@ -110,17 +112,45 @@
             border-radius: 50%;
             padding: 8px;
         }
-        #header-hamburger > div{
+        #header-hamburger > div, #header-naverpay > div, #header-navertalk > div, #header-notice > div, #header-shoppingbag > div{
             background-image: url(./sp_main.png);
             width: 32px;
             height: 32px;
             position: relative;
             z-index: 1;
             background-size: 452px 436px;
-            background-position: -303px -164px;
             background-repeat: no-repeat;
         }
-
+        #header-hamburger{
+            left: -12px;
+        }
+        #header-hamburger > div{
+            background-position: -303px -164px;
+        }
+        #header-naverpay{
+            left: 42px;
+        }
+        #header-naverpay > div{
+            background-position: -242px -257px;
+        }
+        #header-navertalk{
+            right: 94px;
+        }
+        #header-navertalk > div{
+            background-position: -96px -313px;
+        }
+        #header-notice{
+            right: 42px;
+        }
+        #header-notice > div{
+            background-position: -303px -230px;
+        }
+        #header-shoppingbag{
+            right: -9px;
+        }
+        #header-shoppingbag > div{
+            background-position: -31px -313.5px;
+        }
         #main{
             height: 2000px;
         }
@@ -138,9 +168,26 @@
     <div id="wrap">
         <div id="wrap-center">
             <div id="header">
-                <div id="header-hamburger">
+                <button id="header-hamburger">
                     <div></div>
                     <span class="blind">확장 영역</span>
+                </button>
+                <button id="header-naverpay">
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                </button>
+                <button id="header-navertalk">
+                    <div></div>
+                    <span class="blind">네이버 톡</span>
+                </button>
+                <button id="header-notice">
+                    <div></div>
+                    <span class="blind">알림</span>
+                </button>
+                <button id="header-shoppingbag">
+                    <div></div>
+                    <span class="blind">장바구니</span>
+                </button>
             </div>
             <div id="search"></div>
             <div id="nav"></div>

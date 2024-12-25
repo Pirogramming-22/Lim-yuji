@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Github.css" />
+    <title>깃허브클론코딩</title>
+    <style>
+        header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+    background-color: #24292e;
+  }
+  body {
+    background-color: #24292e;
+  }
+  .headerNav {
+    display: flex;
+    color: white;
+    width: 40rem;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+  }
+  .headerNav img {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .headerSign {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 28rem;
+    justify-content: space-between;
+  }
+  .headerSign > :nth-child(1) {
+    width: 17rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: rgba(85, 91, 96, 1);
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .headerSign > :nth-child(1)::placeholder {
+    color: white;
+  }
+  
+  .headerSign > :nth-child(3) {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border: solid 1px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .bodyContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .textWrapper {
+    width: 35rem;
+    max-height: 20rem;
+    color: white;
+    padding: 5rem;
+  }
+  .text1 {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  .text2 {
+    font-size: 1.5rem;
+    color: rgba(246, 246, 246, 0.649);
+  }
+  u {
+    color: white;
+  }
+  span {
+    color: rgba(12, 80, 207, 0.911);
+  }
+  .SignupWrapper {
+    width: 27rem;
+    height: 34rem;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SignupContainer input {
+    width: 25.5rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 3px solid rgb(221, 221, 221);
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: black !important;
+  }
+  .SignupContainer input:focus {
+    background-color: #d2def8f4;
+  }
+  .submitButton {
+    width: 27rem;
+    height: 4.5rem;
+    border: none;
+    background-color: #4ec66a;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 1rem;
+    cursor: pointer;
+  }
+  .text3 {
+    font-size: 0.82rem;
+    color: #606263;
+  }
+  .text4 {
+    font-size: 0.82rem;
+    color: #888c8f;
+  }
+  
+  footer img {
+    position: absolute;
+    right: 13rem;
+    bottom: 0%;
+  }
+  .whiteBlock {
+    background-color: white;
+    width: 99.5%;
+    height: 13rem;
+    position: absolute;
+    bottom: 0%;
+  }
+    </style>
+  </head>
+  <header>
+    <div class="headerNav">
+      <img src="../깃허브페이지과제/logo.svg" />
+      <div>Why Github? ⩡</div>
+      <div>Team</div>
+      <div>Enterprise</div>
+      <div>Explore ⩡</div>
+      <div>Marketplace</div>
+      <div>Pricing ⩡</div>
+    </div>
+    <div class="headerSign">
+      <input type="search" placeholder="Search Github" />
+      <div>Sign In</div>
+      <input type="button" value="Sign Up" />
+    </div>
+  </header>
+  <body>
+    <div class="bodyContainer">
+      <div class="textWrapper">
+        <div class="text1">Built for<br />developers</div>
+        <div class="text2">
+          GitHub is a development platform inspired by the way you work. From
+          <u>open source</u> to <u>business</u>, you can host and review code,
+          manage projects, and build software alongside 50 million developers.
+        </div>
+      </div>
+      <div class="SignupWrapper">
+        <div class="SignupContainer">
+          <div>Username</div>
+          <input type="text" placeholder="Username" />
+          <div>Email</div>
+          <input type="email" placeholder="Email" />
+          <div>Password</div>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div class="text3">
+          Make sure it's at least 15 characters OR at least 8 characters
+          including a number and a lowercase letter. <span>Learn more</span>.
+        </div>
+        <input class="submitButton" type="submit" value="Sign up for GitHub" />
+        <div class="text4">
+          By clicking "Sign up for GitHub", you agree to our
+          <span>Terms of Service</span> and <span>Privacy Statement</span>.
+          We'll occasionally send you account-related emails.
+        </div>
+      </div>
+    </div>
+    <div class="whiteBlock"></div>
+  </body>
+  <footer>
+    <img src="../깃허브페이지과제/footer.webp" />
+  </footer>
+</html>

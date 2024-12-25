@@ -192,7 +192,7 @@
             </div>
             <style>
                 #search > form{
-                    display: inline-block;
+                    display: inline-flex;
                     width: 706px;
                     height: 58px;
                     padding-left: 28px;
@@ -210,7 +210,16 @@
                     outline: none;
                 }
                 #search-right{
-                    display: inline-block;
+                    flex: 1;
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-end;
+
+                }
+                #search-keyboard, #search-recent, #search-button{
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
                 }
                 #search-keyboard::before {
                     content: "";

@@ -1,0 +1,15 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    background-color: beige;
+    padding: 20px;
+
+}
+
+.grid-item {
+    background-color: orange;
+    color: brown;
+    padding: 20px;
+    text-align: center;
+}

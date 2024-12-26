@@ -15,17 +15,21 @@
     text-align: center;
     margin: 10px;
 }
-
+@media(min-width: 769){
+    .flex-item{
+        flex: 1 1 clac(50% -60px);
+    }
+}
 @media(max-width: 768px){/*태블릿*/
     .flex-item {
-        flex: 1 1 calc(50% -60px);
+        flex: 1 1 calc(33.33% -40px);
     }
 
 }
 
 @media(max-width: 480){ /*모바일*/
     .flex-item{
-        flex: 1 1 calc(100%);
+        flex: 1 1 calc(100% -20%);
     }
 
 }

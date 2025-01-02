@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="git.css" />
+    <title>Github</title>
+    <style>
+      header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 16px;
+        background-color: #24292e;
+      }
+      body {
+        background-color: #24292e !important;
+        margin: 0;
+        padding: 0;
+    }
+      body, input, button, div, span, u {
+        font-family: Arial, sans-serif;
+      }
+      .headerNav {
+        display: flex;
+        color: white;
+        width: 640px;
+        justify-content: space-between;
+        padding: 16px;
+        align-items: center;
+      }
+      .headerNav img {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .headerSign {
+        display: flex;
+        align-items: center; 
+        color: white;
+        width: 448px;
+        justify-content: space-between;
+      }
+      .headerSign > :nth-child(1) {
+        width: 272px;
+        height: 40px;
+        border: none;
+        border-radius: 6px;
+        background-color: rgba(85, 91, 96, 1);
+        font-size: 1rem;
+        padding: 8px;
+      }
+      .headerSign > :nth-child(1)::placeholder {
+        color: white;
+      }
+      
+      .headerSign > :nth-child(3) {
+        width: 85px;
+        height: 32px;
+        border-radius: 6.4px;
+        background-color: transparent;
+        color: white;
+        border-color: white;
+        border: solid 1px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .bodyContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .textWrapper {
+        width: 100%;
+        max-width: 550px;
+        color: white;
+        box-sizing: border-box;
+        padding: 40px;
+        text-align: center;
+      }
+      .text1 {
+        font-weight: normal;
+        font-size: 4rem;
+        text-align: left;
+      }
+      .text2 {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-top: 20px;
+        color: rgba(246, 246, 246, 0.649);
+        text-align: left;
+      }
+      u {
+        color: white;
+        text-decoration: none;
+      }
+      span {
+        color: rgba(12, 80, 207, 0.911);
+      }
+      .SignupWrapper {
+        width: 380px;
+        height: 454px;
+        background-color: white;
+        padding: 40px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .SignupContainer input {
+        width: 380px;
+        height: 35px;
+        border-radius: 7px;
+        border: 1px solid rgb(221, 221, 221);
+        margin-top: 9.6px;
+        margin-bottom: 16px;
+        padding: 8px;
+        color: black !important;
+      }
+      .SignupContainer input:focus {
+        background-color: #d2def8f4;
+      }
+      .submitButton {
+        width: 100%;
+        
+        padding: 18px;
+        border: none;
+        background-color: #4ec66a;
+        border-radius: 8px;
+        font-size: 1.4rem;
+        color: white;
+        margin: 16px;
+        cursor: pointer;
+      }
+      .text3 {
+        font-size: 0.9rem; 
+        color: #606263;
+      }
+      .text4 {
+        font-size: 0.9rem;
+        color: #888c8f;
+      }
+      
+      footer img {
+        position: absolute;
+        right: 80px;
+        bottom: -40px;
+        width: 500px;
+        height: auto;
+      }
+      .whiteBlock {
+        background-color: white;
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        bottom: 0%;
+        left: 0%
+}
+    </style>
+  </head>
+  <header>
+    <div class="headerNav">
+      <img src="./githublogo.png" />
+      <div>Why Github? ˅</div>
+      <div>Team</div>
+      <div>Enterprise</div>
+      <div>Explore ˅</div>
+      <div>Marketplace</div>
+      <div>Pricing ˅</div>
+    </div>
+    <div class="headerSign">
+      <input type="search" placeholder="Search Github" />
+      <div>Sign in</div>
+      <input type="button" value="Sign up" />
+    </div>
+  </header>
+  <body>
+    <div class="bodyContainer">
+      <div class="textWrapper">
+        <div class="text1">Built for<br />developers</div>
+        <div class="text2">
+          GitHub is a development platform inspired by the way you work. From
+          <u>open source</u> to <u>business</u>, you can host and review code,
+          manage projects, and build software alongside 50 million developers.
+        </div>
+      </div>
+      <div class="SignupWrapper">
+        <div class="SignupContainer">
+          <div>Username</div>
+          <input type="text" placeholder="Username" />
+          <div>Email</div>
+          <input type="email" placeholder="Email" />
+          <div>Password</div>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div class="text3">
+          Make sure it's at least 15 characters OR at least 8 characters
+          including a number and a lowercase letter. <span>Learn more</span>.
+        </div>
+        <input class="submitButton" type="submit" value="Sign up for GitHub" />
+        <div class="text4">
+          By clicking "Sign up for GitHub", you agree to our
+          <span>Terms of Service</span> and <span>Privacy Statement</span>.
+          We'll occasionally send you account-related emails.
+        </div>
+      </div> 
+    </div>
+    <div class="whiteBlock"></div>
+  </body>
+  <footer>
+    <img src="./footer.png" />
+  </footer>
+</html>

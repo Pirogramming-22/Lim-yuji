@@ -1,0 +1,139 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 16px;
+    background-color: #24292e;
+  }
+  body {
+    background-color: #24292e !important;
+    margin: 0;
+    padding: 0;
+  } 
+  body, input, button, div, span, u {
+    font-family: Arial, sans-serif;
+  }
+  .headerNav {
+    display: flex;
+    color: white;
+    width: 640px;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+  }
+  .headerNav img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .headerSign {
+    display: flex;
+    align-items: center; 
+    color: white;
+    width: 448px;
+    justify-content: space-between;
+  }
+  .headerSign > :nth-child(1) {
+    width: 272px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(85, 91, 96, 1);
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .headerSign > :nth-child(1)::placeholder {
+    color: white;
+  }
+  
+  .headerSign > :nth-child(3) {
+    width: 85px;
+    height: 32px;
+    border-radius: 6.4px;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border: solid 1px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .bodyContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .textWrapper {
+    width: 550px;
+    max-height: 320px;
+    color: white;
+    padding: 60px;
+  }
+  .text1 {
+    font-weight: normal;
+  }
+  .text2 {
+    margin-top: 20px;
+    color: rgba(246, 246, 246, 0.649);
+  }
+  u {
+    color: white;
+    text-decoration: none;
+  }
+  span {
+    color: rgba(12, 80, 207, 0.911);
+  }
+  .SignupWrapper {
+    width: 432px;
+    height: 544px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SignupContainer input {
+    width: 408px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-top: 9.6px;
+    margin-bottom: 16px;
+    padding: 8px;
+    color: black !important;
+  }
+  .SignupContainer input:focus {
+    background-color: #d2def8f4;
+  }
+  .submitButton {
+    width: 432px;
+    height: 72px;
+    border: none;
+    background-color: #4ec66a;
+    border-radius: 8px;
+    color: white;
+    margin: 16px;
+    cursor: pointer;
+  }
+  .text3 {
+    color: #606263;
+  }
+  .text4 {
+    color: #888c8f;
+  }
+  
+  footer img {
+    position: absolute;
+    right: 80px;
+    bottom: -40px;
+    width: 500px;
+    height: auto;
+  }
+  .whiteBlock {
+    background-color: white;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%
+}

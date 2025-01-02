@@ -94,7 +94,7 @@ function check_numbers() {
     attempts--;
     document.getElementById('attempts').textContent = attempts;
 
-    if (strikeCount === 3) {
+    if (strikeCount === 3) { 
         document.getElementById('game-result-img').src = 'success.png';
         document.getElementById('game-result-img').style.display = 'block';
         document.querySelector('.submit-button').disabled = true;

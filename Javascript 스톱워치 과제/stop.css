@@ -37,6 +37,7 @@ h1{
     background-color: white;
     border-radius: 15px;
     font-size: 3rem;
+    font-weight: 600;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
@@ -58,7 +59,7 @@ h1{
     background-color: white;
     color: black;
     text-align: center;
-    
+    cursor: pointer;
 }
 .laps{
     margin-top: 2rem;
@@ -80,6 +81,7 @@ h1{
     border: none;
     background-color: transparent;
     margin-left: 1rem;
+    font-size: 2rem;
 }
 .record{
     font-size: 1.5rem;
@@ -91,4 +93,29 @@ h1{
     border: none;
     padding: 0.5rem;
     margin-right: 1rem;
+    cursor: pointer;
+}
+.delete:hover{
+    color: orangered;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    margin-block: 0.5rem;
+    margin-left: 1rem;
+}
+.lap-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+
+
+i {
+    font-size: 2rem;
 }

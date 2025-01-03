@@ -14,9 +14,10 @@ while True:
         except ValueError:
             print("정수를 입력하세요")
     if num >= 31:
+        print("playerB win!")
         break
 
-    
+
     while True:
         try:
             number = int(a)
@@ -30,4 +31,5 @@ while True:
         except ValueError:
             print("정수를 입력하세요")
     if num >= 31:
+        print("playerA win!")
         break

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New review</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+
+        }
+        .btn-title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .btn-title h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn-title h1 span {
+            color: pink;
+        }
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-create {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-create:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.3);
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-header h2 span {
+            color: pink;
+        }
+
+        .btn-submit {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="{% url 'reviews:review_list' %}" class="btn-title">
+                <h1>my <span>Movie</span> review</h1>
+            </a>
+        </div>
+        <div class="btn-container">
+            <a href="{% url 'reviews:review_create' %}" class="btn btn-create">Add a New review</a>
+        </div>
+    </header>
+    <div class="form-container">
+        <div class="form-header">
+            <h2><span>Movie</span> Review 🍿</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_title" class="form-label">제목:</label>
+                {{ form.title }}
+            </div>
+            <div class="mb-3">
+                <label for="id_release_year" class="form-label">개봉연도:</label>
+                {{ form.release_year }}
+            </div>
+            <div class="mb-3">
+                <label for="id_genre" class="form-label">장르:</label>
+                {{ form.genre }}
+            </div>
+            <div class="mb-3">
+                <label for="id_rating" class="form-label">별점:</label>
+                {{ form.rating }}
+            </div>
+            <div class="mb-3">
+                <label for="id_running_time" class="form-label">러닝타임:</label>
+                {{ form.running_time }}
+            </div>
+            <div class="mb-3">
+                <label for="id_content" class="form-label">리뷰:</label>
+                {{ form.content }}
+            </div>
+            <div class="mb-3">
+                <label for="id_director" class="form-label">감독:</label>
+                {{ form.director }}
+            </div>
+            <div class="mb-3">
+                <label for="id_actors" class="form-label">배우:</label>
+                {{ form.actors }}
+            </div>
+            <button type="submit" class="btn btn-submit">save</button>
+        </form>
+    </div>
+</body>
+</html>

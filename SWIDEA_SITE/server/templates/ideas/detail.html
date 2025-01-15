@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ idea.title }}</h2>
+<img src="{{ idea.image.url }}" alt="{{ idea.title }}" style="width:200px;">
+<p>아이디어 관심도 : {{ idea.interest }}</p>
+<p>예상 개발툴: <a href="{% url 'devtool:detail' idea.devtool.pk %}">{{ idea.devtool }}</a></p>
+<p>아이디어 설명 : {{ idea.content }}</p>
+
+<div>
+    <a href="{% url 'ideas:update' idea.pk %}">
+        <button type="button">수정</button>
+    </a>
+    <a href="{% url 'ideas:list' %}">
+        <button type="button">목록</button>
+    </a>
+    <form method="POST" action="{% url 'ideas:delete' idea.pk %}" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">삭제</button>
+    </form>
+</div>
+{% endblock %}

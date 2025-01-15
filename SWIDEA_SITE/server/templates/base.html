@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'ideas/css/style.css'%}">  
+  {%block head%}
+
+
+  {% endblock %}
+</head>
+<body>
+  <main>
+    <nav>
+    <a href="/"><h1>My SW Idea Manage</h1></a>
+    <a href="{% url 'ideas:create' %}" class="mx-2">
+      <button type="button" class="btn btn-info">아이디어 등록</button>
+    </a>
+    <a href="{% url 'ideas:list' %}" class="mx-2">
+      <button type="button" class="btn btn-warning">아이디어 관리</button>
+    </a>
+    <a href="{% url 'devtool:create' %}" class="mx-2">
+        <button type="button" class="btn btn-info">개발툴 등록</button>
+      </a>
+      <a href="{% url 'devtool:list' %}" class="mx-2">
+        <button type="button" class="btn btn-warning">개발툴 관리</button>
+      </a>
+    </nav>
+    <hr>
+    <div class="container">
+        {%block content%}
+      
+    
+        {%endblock%}
+      </div>
+  </main>
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

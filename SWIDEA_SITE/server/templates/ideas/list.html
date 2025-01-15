@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Idea list</h2>
+
+<form method="get" class="sort-form">
+    {% csrf_token %}
+    <select name="sort" onchange="this.form.submit()">
+        <option value="latest" {% if request.GET.sort == 'latest' %}selected{% endif %}>최신순</option>
+        <option value="likes" {% if request.GET.sort == 'likes' %}selected{% endif %}>찜하기순</option>
+        <option value="name" {% if request.GET.sort == 'name' %}selected{% endif %}>이름순</option>
+        <option value="oldest" {% if request.GET.sort == 'oldest' %}selected{% endif %}>등록순</option>
+    </select>
+</form>
+
+<div class="idea">
+    {% for idea in ideas %}
+    <div class="idea_items">
+        <div class="image-container">
+            <img src="{{ idea.image.url }}" alt="{{ idea.title }}">
+            <div class="star-btn {% if idea.is_starred %}active{% endif %}" data-id="{{ idea.id }}">
+                {% if idea.is_starred %}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,239,0,1)">
+                        <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>
+                    </svg>
+                {% else %}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray">
+                        <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26ZM12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"></path>
+                    </svg>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{% url 'ideas:detail' idea.pk %}"><h2>{{ idea.title }}</h2></a>
+        <p>예상 개발 툴 : {{ idea.devtool }}</p>
+        <p>
+            아이디어 관심도 :
+            <button class="decrease-interest" data-id="{{ idea.id }}">-</button>
+            <span id="interest-{{ idea.id }}">{{ idea.interest }}</span>
+            <button class="increase-interest" data-id="{{ idea.id }}">+</button>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    // 관심도 
+    document.querySelectorAll('.increase-interest').forEach(button => {
+        button.addEventListener('click', function () {
+            const ideaId = this.dataset.id;
+            updateInterest(ideaId, 'increase');
+        });
+    });
+
+    document.querySelectorAll('.decrease-interest').forEach(button => {
+        button.addEventListener('click', function () {
+            const ideaId = this.dataset.id;
+            updateInterest(ideaId, 'decrease');
+        });
+    });
+
+    function updateInterest(ideaId, action) {
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        fetch(`/ideas/${ideaId}/update-interest/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrfToken,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ action: action }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById(`interest-${ideaId}`).textContent = data.new_interest;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // 찜 별
+    document.querySelectorAll('.star-btn').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const ideaId = this.dataset.id;
+            console.log('Clicked ideaId:', this.dataset.id);
+
+            fetch(`/ideas/${ideaId}/toggle-star/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                const svg = this.querySelector('svg');
+                if (data.starred) {
+                    this.classList.add('active');
+                    svg.setAttribute('fill', 'rgba(255,239,0,1)');
+                } else {
+                    this.classList.remove('active');
+                    svg.setAttribute('fill', 'gray');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+{% endblock %}
